@@ -63,16 +63,16 @@ namespace AlgorithmPlayground
 				if (depth > maxDepth)
 					break;
 				q2 = new Queue<BinaryTreeNode>();
-				Console.Write(new String('\t', (int)Math.Pow(2, maxDepth - depth) - 1));
+				Console.Write(new String(' ', (int)Math.Pow(2, maxDepth - depth) - 1));
 				while (q1.Count != 0)
 				{
 					var TreeNode = q1.Dequeue();
 					if (TreeNode == null)
 					{
-						Console.Write(new String('\t', (int)Math.Pow(2, maxDepth - depth + 1)));
+						Console.Write(new String(' ', (int)Math.Pow(2, maxDepth - depth + 1)));
 						continue;
 					}
-					Console.Write(TreeNode.Val + new String('\t', (int)Math.Pow(2, maxDepth - depth + 1)));
+					Console.Write(TreeNode.Val + new String(' ', (int)Math.Pow(2, maxDepth - depth + 1)-TreeNode.Val.ToString().Length));
 					q2.Enqueue(TreeNode.Left);
 					q2.Enqueue(TreeNode.Right);
 				}
