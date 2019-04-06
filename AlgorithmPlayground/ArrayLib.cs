@@ -11,9 +11,9 @@ namespace AlgorithmPlayground
 		public static int[] CreateArray(int length)
 		{
 			int[] res = new int[length];
-			for (int i = 1; i < length; i++)
+			for (int i = 1; i <= length; i++)
 			{
-				res[i] = i;
+				res[i-1] = i;
 			}
 			return res;
 		}
