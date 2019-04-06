@@ -1,4 +1,4 @@
-Thoughts on printing out a binary tree. 
+Thoughts on printing out a binary tree 
 
 
 							1							
