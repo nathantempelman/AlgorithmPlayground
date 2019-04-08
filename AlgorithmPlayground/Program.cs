@@ -11,7 +11,7 @@ namespace AlgorithmPlayground
 		static void Main(string[] args)
 		{
 
-			int[] turnintotree = ArrayLib.CreateArray(127);
+			int[] turnintotree = ArrayLib.CreateArray(10);
 
 			BinaryTreeNode treeHead = new BinaryTreeNode(turnintotree);
 			treeHead.InOrderPrint();
