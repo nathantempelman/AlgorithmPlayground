@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AlgorithmPlayground
 {
-	static class ArrayLib
+	public static class ArrayLib
 	{
 		public static int[] CreateArray(int length)
 		{
