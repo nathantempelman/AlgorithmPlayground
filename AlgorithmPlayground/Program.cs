@@ -10,13 +10,12 @@ namespace AlgorithmPlayground
 	{
 		static void Main(string[] args)
 		{
-
 			int[] turnintotree = ArrayLib.CreateArray(10);
 
 			BinaryTreeNode treeHead = new BinaryTreeNode(turnintotree);
+
 			treeHead.InOrderPrint();
 			treeHead.PrettyPrintTree();
-
 
 			Console.Read();
 		}

@@ -33,21 +33,32 @@ namespace AlgorithmPlayground
 			head.Right = ConvertArrayToTree(arr, headpos + 1, end);
 			return head;
 		}
+
 		public void InOrderPrint()
 		{
-			InOrderPrint(this);
+			foreach(BinaryTreeNode n in this.GetInOrder())
+				Console.Write(n.Val + " ");
 			Console.WriteLine();
 		}
-		private void InOrderPrint(BinaryTreeNode n)
+
+		public LinkedList<BinaryTreeNode> GetInOrder()
 		{
-			if (n == null)
-				return;
-			InOrderPrint(n.Left);
-			Console.Write(n.Val + " ");
-			InOrderPrint(n.Right);
+			LinkedList<BinaryTreeNode> results = new LinkedList<BinaryTreeNode>();
+			GetInOrder(results);
+			return results;
+		}
+		private void GetInOrder(LinkedList<BinaryTreeNode> results)
+		{
+			if(this.Left != null)
+				this.Left.GetInOrder(results);
+			results.AddLast(this);
+			if(this.Right != null)
+				this.Right.GetInOrder(results);
 		}
 
-		// This may be one of the cooler things I've ever written. 
+		/// <remarks>
+		/// This may be one of the cooler things I've ever written. Only works on balanced trees though.
+		/// </remarks>
 		public void PrettyPrintTree()
 		{
 			// bfs through, print based on depth, seperate each depth into different queue
@@ -81,12 +92,47 @@ namespace AlgorithmPlayground
 			}
 		}
 
+		public bool Balanced()
+		{
+			return this.DepthFromHere() - this.MinDepthFromHere() <= 1;
+		}
+
 		public int DepthFromHere(int currentdepth = 0)
 		{
 			currentdepth++;
 			int leftDepth = this.Left != null ? this.Left.DepthFromHere(currentdepth) : currentdepth;
 			int rightDepth = this.Right != null ? this.Right.DepthFromHere(currentdepth) : currentdepth;
 			return Math.Max(leftDepth, rightDepth);
+		}
+
+		public int MinDepthFromHere(int currentdepth = 0)
+		{
+			currentdepth++;
+			if (this.Left == null && this.Right == null)
+				return currentdepth;
+			int minLeft = int.MaxValue;
+			int minRight = int.MaxValue;
+			if (this.Left != null)
+				minLeft = this.Left.MinDepthFromHere(currentdepth);
+			if (this.Right != null)
+				minRight = this.Right.MinDepthFromHere(currentdepth);
+			return Math.Min(minRight, minLeft);
+		}
+
+		/// <summary>
+		/// Returns whether or not this is a binary search tree
+		/// </summary>
+		/// <returns></returns>
+		public bool IsBinarySearchTree()
+		{
+			int current = int.MinValue;
+			foreach(BinaryTreeNode n in GetInOrder())
+			{
+				if (current > n.Val)
+					return false;
+				current = n.Val;
+			}
+			return true;
 		}
 	}
 }

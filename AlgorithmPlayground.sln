@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgorithmPlayground", "AlgorithmPlayground\AlgorithmPlayground.csproj", "{629CBE68-2EAC-4C42-A33F-C750AE3CBFEF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{4D76853B-9E07-479E-805E-ABFF687B8CDF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{629CBE68-2EAC-4C42-A33F-C750AE3CBFEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{629CBE68-2EAC-4C42-A33F-C750AE3CBFEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{629CBE68-2EAC-4C42-A33F-C750AE3CBFEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D76853B-9E07-479E-805E-ABFF687B8CDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D76853B-9E07-479E-805E-ABFF687B8CDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D76853B-9E07-479E-805E-ABFF687B8CDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D76853B-9E07-479E-805E-ABFF687B8CDF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
